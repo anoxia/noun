@@ -34,9 +34,9 @@ cd db && docker-compose up
 在正式启动服务之前，熟悉目录结构有助于后续操作与自定义。
 
 ```Bash
-├── .env    # docker-compose 配置，runtime 与 db 下均有软链指向该文件，镜像、端口等在此配置
-├── code    # 项目代码目录，在 `runtime/vhost` 目录进行配置其 vhost
-├── db      # 数据库目录，所有数据库服务文件在此目录下
+├── env    # docker-compose 配置，runtime 与 db 下均有软链指向该文件，镜像、端口等在此配置
+├── code    # 项目代码目录，在 runtime/vhost 目录进行配置其 vhost
+├── db      # 数据库目录，所有数据库服务文件在此目录
 │  ├── data
 │  │  ├── mysql
 │  │  └── redis
