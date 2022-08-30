@@ -9,6 +9,7 @@
 
 ```ini
 [Xdebug]
+zend_extension = xdebug.so
 xdebug.mode = debug
 xdebug.start_with_request = yes
 ; 扩展运行日志路径，记录 Xdebug 详细运行 trace
