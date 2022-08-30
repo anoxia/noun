@@ -11,8 +11,6 @@ services:
   php:
     build:
       context: ./php
-      args:
-        BASE_IMAGE: ${PHP_IMAGE}
     volumes:
         # 挂载代码目录
         - ${WORKSPACE}/code:${WORKSPACE}/code
