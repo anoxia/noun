@@ -2,7 +2,7 @@
 
 ❤️ 致力于提供简单、灵活自定义的本地 PHP 开发环境，默认提供 nginx + php-fpm + MySQL + Redis 搭配。
 
-## 默认配置
+镜像、端口与密码等默认配置：
 
 ```properties
 # 工作目录
@@ -32,29 +32,26 @@ MYSQL_ROOT_PASSWORD = 123456
 
 ## 运行
 
+第一次使用需要对 WORKSPACE 进行初始化，执行以下命令
+
 ```Bash
-# 第一次使用需要对 WORKSPACE 进行初始化，执行以下命令
 sh init.sh
 ```
 
-`init.sh` 脚本中将会替换 .env 文件中 `WORKSPACE` 值为当前目录所在路径，所有服务将会基于此路径运行，例如：代码、数据文件、Nginx 配置等。
-
-#### 启动服务
-
-* 启动 **Runtime** （Nginx && PHP-FPM）
+启动 **Runtime** (Nginx && PHP-FPM)
 
 ```bash
-cd runtime && docker-compose up
+cd runtime && docker-compose up -d
 ```
 
-* 启动 **db** 
+启动 **db** 
 
 ```bash
-cd db && docker-compose up
+cd db && docker-compose up -d
 ```
 
 
-## 结构
+## 结构说明
 
 在正式启动服务之前，熟悉目录结构有助于后续操作与自定义。
 
