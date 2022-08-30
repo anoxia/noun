@@ -35,14 +35,14 @@ cd db && docker-compose up
 
 ```Bash
 ├── .env    # docker-compose 配置，runtime 与 db 下均有软链指向该文件，镜像、端口等在此配置
-├── code    # 项目代码目录，存放一个或多个项目，各项目访问在 `runtime/vhost` 目录进行配置
-├── db      # 数据库目录，默认内置 MySQL、Redis ，通过目录下 docker-composer.yaml 启动与管理
+├── code    # 项目代码目录，在 `runtime/vhost` 目录进行配置其 vhost
+├── db      # 数据库目录，所有数据库服务文件在此目录下
 │  ├── data
 │  │  ├── mysql
 │  │  └── redis
 │  ├── docker-compose.yaml
 ├── init.sh
-└── runtime    # Nginx 与 PHP 配置目录，通过目录下 docker-composer.yaml 启动与管理
+└── runtime    # Nginx 与 PHP 目录
    ├── docker-compose.yaml
    ├── php.ini
    ├── php
@@ -57,6 +57,7 @@ cd db && docker-compose up
 ## 默认镜像与端口 (.env 文件)
 
 ```properties
+# 工作目录
 WORKSPACE = /path/to/workspace
 
 # Runtime
