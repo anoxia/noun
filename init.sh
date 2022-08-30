@@ -12,5 +12,5 @@ ln -sf `pwd`/.env db/
 if [ ! "$(command -v docker-compose)" ]; then
   echo -e "\033[41;47m > Warning: 检测到未安装 docker-compose 请留意 \033[0m"
 else
-  echo -e "\033[32m > Done: 请按需前往 runtime 与 database 目录启动服务 \033[0m"
+  echo -e "\033[32m > Done! \n > 请按需前往 runtime 与 database 目录启动服务 \033[0m"
 fi
