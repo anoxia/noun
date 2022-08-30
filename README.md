@@ -10,7 +10,6 @@ WORKSPACE = /path/to/workspace
 
 # Runtime
 NGINX_IMAGE = nginx:stable-alpine
-PHP_IMAGE = php:7.4.30-fpm
 
 # Database
 IMAGE_MYSQL = mysql/mysql-server:5.7
