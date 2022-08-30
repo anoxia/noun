@@ -6,7 +6,7 @@ set -eo pipefail
 
 # 创建 env 快链
 ln -sf `pwd`/.env runtime/
-ln -sf `pwd`/.env database/
+ln -sf `pwd`/.env db/
 
 # 提示安装 docker-compose，如果未安装
 if [ ! "$(command -v docker-compose)" ]; then
