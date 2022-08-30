@@ -1,10 +1,49 @@
-## 启动
 
-在启动服务之前，请使用一下指令进行初始化内容替换（将 workspace 路径设置为当前目录）。
+### env
 
-```Bash
-(echo "WORKSPACE = $(pwd)" && sed -e '/WORKSPACE/d' .env) > .env.tmp && mv .env.tmp .env
+```
+# Database
+IMAGE_MONGO = mongo:5.0
+IMAGE_DYNAMODB = amazon/dynamodb-local
 
-mkdir -p data
-cp -rf template/* data/
+# 端口配置
+DYNAMO_PORT = 8000
+MONGO_PORT = 27017
+```
+
+### docker-compose.yaml
+
+```yaml
+
+version: "3"
+
+services:
+  mongo:
+    image: ${IMAGE_MONGO}
+    ports:
+      - ${MONGO_PORT}:27017
+    volumes:
+      - ${WORKSPACE}/db/data/mongodb:/data/db
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+
+  dynamodb:
+    image: ${IMAGE_DYNAMODB}
+    environment:
+      - ./Djava.library.path=./DynamoDBLocal_lib
+    ports:
+      - ${DYNAMO_PORT}:8000
+    volumes:
+      - ${WORKSPACE}/db/data/dynamodb:/home/dynamodblocal/data
+    command:
+      ["-jar", "DynamoDBLocal.jar", "-sharedDb", "-dbPath", "./data"]
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+        reservations:
+          memory: 50M
+
 ```
