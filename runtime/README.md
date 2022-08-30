@@ -19,64 +19,10 @@ xdebug.client_host = docker.for.mac.host.internal
 xdebug.client_port = 9003
 ```
 
-## 附录
-
 ### mac 上 docker 内访问宿主机
 
-Docker For Mac的Docker Daemon是运行于虚拟机(xhyve)中的, 而不是像Linux上那样作为进程运行于宿主机，因此Docker For Mac没有docker0网桥
+Docker For Mac的Docker Daemon 是运行于虚拟机 (xhyve) 中的, 而不是像 Linux 上那样作为进程运行于宿主机，因此 Docker For Mac 没有 docker0 网桥
 访问方式
-1、docker for mac 的容器里可以通过 docker.for.mac.host.internal 域名直接访问宿主机服务
-2、docker inspect <container_id> 命令，可以查看到容器的网络配置
 
-### PHP 扩展列表
-
-PHP 镜像默认提供以下扩展：
-
-```
-[PHP Modules]
-bcmath
-Core
-ctype
-curl
-date
-dom
-fileinfo
-filter
-ftp
-hash
-iconv
-json
-libxml
-mbstring
-mongodb
-mysqlnd
-openssl
-pcntl
-pcre
-PDO
-pdo_mysql
-pdo_sqlite
-Phar
-posix
-readline
-redis
-Reflection
-session
-SimpleXML
-sockets
-sodium
-SPL
-sqlite3
-standard
-tokenizer
-xdebug
-xml
-xmlreader
-xmlwriter
-yaconf
-yaf
-zlib
-
-[Zend Modules]
-Xdebug
-```
+1. docker for mac 的容器里可以通过 docker.for.mac.host.internal 域名直接访问宿主机服务
+2. docker inspect <container_id> 命令，可以查看到容器的网络配置
