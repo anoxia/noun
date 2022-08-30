@@ -4,7 +4,7 @@
 
 ## 运行
 
-#### WORKSPACE 路径初始化
+#### 1. WORKSPACE 路径初始化
 
 第一次使用需要对本地工作空间进行初始化，执行一下命令：
 
@@ -14,7 +14,7 @@ sh init.sh
 
 `init.sh` 脚本中将会替换 .env 文件中 `WORKSPACE` 值为当前目录所在路径，所有服务将会基于此路径运行，例如：代码、数据文件、Nginx 配置等。
 
-#### 启动服务
+#### 2. 启动服务
 
 启动 **Runtime** （Nginx && PHP-FPM）
 
@@ -86,4 +86,4 @@ MYSQL_ROOT_PASSWORD = 123456
 
 ## 其它
 
-在 `runtime` 与 `db` 目录 README 文件中包含更多定制示例以供参考。
+在 `runtime` 与 `db` 目录 README 文件中包含更多配置示例以供参考。
