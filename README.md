@@ -1,6 +1,32 @@
 # Noun 
 
-❤️ 致力于提供简单、灵活自定义的本地 PHP 开发环境，默认提供 nginx + php-fpm + MySQl + Redis 搭配，对于其他搭配请参考下方文档自行搭配。
+❤️ 致力于提供简单、灵活自定义的本地 PHP 开发环境，默认提供 nginx + php-fpm + MySQL + Redis 搭配。
+
+## 运行
+
+#### WORKSPACE 路径初始化
+
+第一次使用需要对本地工作空间进行初始化，执行一下命令：
+
+```Bash
+sh init.sh
+```
+
+`init.sh` 脚本中将会替换 .env 文件中 `WORKSPACE` 值为当前目录所在路径，所有服务将会基于此路径运行，例如：代码、数据文件、Nginx 配置等。
+
+#### 启动服务
+
+启动 **Runtime** （Nginx && PHP-FPM）
+
+```bash
+cd runtime && docker-compose up
+```
+
+启动 **db** 
+
+```bash
+cd db && docker-compose up
+```
 
 
 ## 结构
@@ -56,30 +82,6 @@ MYSQL_ROOT_PASSWORD = 123456
 
 ```
 
-## 启动
+## 其它
 
-### WORKSPACE 初始化
-
-第一次使用需要对本地工作空间进行初始化，执行一下命令：
-
-```Bash
-sh init.sh
-```
-
-在 `init.sh` 脚本中将会替换 `WORKSPACE` 值为当前目录所在路径，所有服务将会基于此路径运行，例如：代码、数据文件、Nginx 配置等。
-
-### 启动服务
-
-启动 **Runtime** （Nginx && PHP-FPM）
-
-```bash
-cd runtime && docker-compose up
-```
-
-启动 **db** 
-
-```bash
-cd db && docker-compose up
-```
-
-
+在 `runtime` 与 `db` 目录 README 文件中包含更多定制示例以供参考。
