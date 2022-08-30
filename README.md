@@ -59,7 +59,9 @@ cd db && docker-compose up
 **值得注意**的是，db 和 runtime 分离有助于将数据库服务与运行时分离，便于各自重启变更等。
 
 ## 默认镜像与端口
-```
+```properties
+WORKSPACE = /path/to/workspace
+
 # Runtime
 NGINX_IMAGE = nginx:stable-alpine
 PHP_IMAGE = php:7.4.30-fpm
