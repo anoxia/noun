@@ -36,7 +36,7 @@ cd db && docker-compose up
 ```Bash
 ├── .env    # docker-compose 服务环境变量配置，runtime 与 db 下均有软链指向该文件，服务镜像、端口等均在此配置
 ├── code    # 项目代码目录，存放一个或多个项目，各项目访问在 `runtime/vhost` 目录进行配置
-├── db    # 数据库目录，默认内置 MySQL、Redis ，通过目录下 docker-composer.yaml 启动与管理
+├── db      # 数据库目录，默认内置 MySQL、Redis ，通过目录下 docker-composer.yaml 启动与管理
 │  ├── data
 │  │  ├── mysql
 │  │  └── redis
