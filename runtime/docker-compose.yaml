@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  nginx:
+    image: ${NGINX_IMAGE}
+    ports:
+      - ${NGINX_PORT}:80
+    volumes:
+      - ${WORKSPACE}/runtime/vhosts:/etc/nginx/conf.d
+      - ${WORKSPACE}/runtime/nginx.conf:/etc/nginx/nginx.conf
+  php:
+    build:
+      context: ./php
+      args:
+        BASE_IMAGE: ${PHP_IMAGE}
+    volumes:
+        # 挂载代码目录
+        - ${WORKSPACE}/code:${WORKSPACE}/code
+        # 挂载 php.ini 实现配置灵活调整
+        - ${WORKSPACE}/runtime/php.ini:/usr/local/etc/php/php.ini
+
+networks:
+  default:
+    name: database_default
+    external: true
+

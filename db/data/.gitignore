@@ -1,0 +1,15 @@
+!.gitignore
+
+# MySQL 目录
+/mysql/*
+!/mysql/my.cnf
+
+# Redis 目录
+/redis/*
+!/redis/redis.conf
+
+# DynamoDB 目录
+/dynamodb/*
+
+# MongoDB 目录
+/mongodb/*
