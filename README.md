@@ -10,20 +10,15 @@ WORKSPACE = /path/to/workspace
 
 # Runtime
 NGINX_IMAGE = nginx:stable-alpine
-PHP_IMAGE = php:7.4.30-fpm
 
 # Database
 IMAGE_MYSQL = mysql/mysql-server:5.7
 IMAGE_REDIS = redis:5
-IMAGE_MONGO = mongo:5.0
-IMAGE_DYNAMODB = amazon/dynamodb-local
 
 # 服务端口配置
 NGINX_PORT = 6000
 REDIS_PORT = 6379
 MYSQL_PORT = 3306
-DYNAMO_PORT = 8000
-MONGO_PORT = 27017
 
 # MYSQL 默认密码
 MYSQL_ROOT_PASSWORD = 123456

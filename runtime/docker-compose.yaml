@@ -19,6 +19,6 @@ services:
 
 networks:
   default:
-    name: database_default
+    name: db_default
     external: true
 
